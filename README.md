@@ -1,6 +1,6 @@
 # Unit 12 MySQL Homework: Employee Tracker
 
-![GitHub license](https://img.shields.io/badge/Made%20by-%40hoffman1200-orange)
+![GitHub license](https://img.shields.io/badge/Made%20by-%40mohamed0228-orange)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description 
@@ -9,13 +9,13 @@ Developers are often tasked with creating interfaces that make it easy for non-d
 
 ### App working example
 
-![Git](EmployeeTracker.gif)   
+  
 [Video Link App Working](https://youtu.be/g8z07HnSBes)
 
 ### App Screen Shots
 
-![Foto1](Foto1.png)   
-![Foto2](Foto2.png)
+![Foto1](pic.png)   
+![Foto2](pic2.png)
 
 ## Table of contents
 
@@ -42,7 +42,7 @@ This command-line application allows the user to:
 
   * Update employee roles
 
-  * Update employee managers
+ 
 
   * Delete departments, roles, and employees
 
@@ -56,7 +56,7 @@ The application will be invoked with the following command:
 
 ## Repository
 
-- [Project Repo](https://github.com/hoffman1200/Homework-12)
+- [Project Repo](https://github.com/mohamed0228/Employee-Tracker)
 
 ## GitHub
 

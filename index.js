@@ -36,7 +36,7 @@ function options() {
                     'Add a department',
                     'Add a role',
                     'Update employee role',
-                    'Delete an employee',
+                    'Delete department',
                     'EXIT'
                     ]
             }).then(function (answer) {
@@ -62,8 +62,8 @@ function options() {
                     case 'Update employee role':
                         updateRole();
                         break;
-                    case 'Delete an employee':
-                        deleteEmployee();
+                    case 'Delete departement':
+                        deleteDepartment();
                         break;
                     case 'EXIT': 
                         exitApp();
@@ -247,9 +247,41 @@ function updateRole() {
 };
 
 //  delete an employee
-function deleteEmployee() {
+function deleteDepartment() {
+  
+    let departmentOptions = [];
+    for (var i = 0; i < departments.length; i++) {
+      departmentOptions.push(Object(departments[i]));
+    }
+  
+    inquirer.prompt([
+      {
+        name: "deleteDepartment",
+        type: "list",
+        message: "Select a department to delete",
+        choices: function () {
+          var choiceArray = [];
+          for (var i = 0; i < departmentOptions.length; i++) {
+            choiceArray.push(departmentOptions[i])
+          }
+          return choiceArray;
+        }
+      }
+    ]).then(answer => {
+      for (i = 0; i < departmentOptions.length; i++) {
+        if (answer.deleteDepartment === departmentOptions[i].name) {
+          newChoice = departmentOptions[i].id
+          connection.query(`DELETE FROM department Where id = ${newChoice}`), (err, res) => {
+            if (err) throw err;
+          };
+          console.log("Department: " + answer.deleteDepartment + " Deleted Succesfully");
+        }
+      }
+      viewDepartments();
+      options();
+    })
+  };
 
-};
 
 // exit the app
 function exitApp() {
